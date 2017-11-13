@@ -1,1 +1,0 @@
-module.exports Object.freeze(credential : 'mongodb://MarceloPedroRedes:marcelopedro1@ds255715.mlab.com:55715/efeito-mateus');
