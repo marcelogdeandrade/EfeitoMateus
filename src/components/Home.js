@@ -4,7 +4,11 @@ import ReactPlayer from 'react-player'
 import VideoPlayer from './VideoPlayer'
 import {shuffle} from '../modules/randomize_array'
 
+const isBrowser = typeof window !== 'undefined';
+const MyWindowDependentLibrary = isBrowser ? require('semantic-ui-react') : undefined;
+
 class Home extends Component {
+  
   constructor(props){
     super()
     this.state = {
