@@ -1,18 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://MarceloPedroRedes:marcelopedro1@ds255715.mlab.com:55715/efeito-mateus', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
-const mongoUrl = 'mongodb://MarceloPedroRedes:marcelopedro1@ds255715.mlab.com:55715/efeito-mateus'
-mongoose.connect(mongoUrl, {
-  useMongoClient: true
-});
-var db = mongoose.connection;
-
-db.createCollection("Videos", function(err, res) {
-  if (err) console.log(err);
-  console.log(("Collection created!"))
-  db.close();
-});
+var videos = mongoose.model('Videos', { video_id: String });
 
 // Constants
 const PORT = 8081;
@@ -27,8 +19,7 @@ app.set('view engine', 'jade');
 
 app.get('/', (req, res) => {
   res.render('home', {
-    title: 'Welcome',
-    user: { 'fullname' : 'Marcelo'}
+    videos: ['https://www.youtube.com/embed/G4XkoysO_Pk']
   });
 });
 

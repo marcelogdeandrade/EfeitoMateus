@@ -6,4 +6,8 @@ html
     div.container
       div.jumbotron
         h2 Olá, por favor veja os vídeos a seguir os avalie!
+      each i in videos
+        div.jumbotron
+          iframe(src=i width='400' height='320' frameborder=0 scrolling='no')
+          input
 
