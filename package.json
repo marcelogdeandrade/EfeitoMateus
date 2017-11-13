@@ -24,6 +24,6 @@
     "react-router-dom": "^4.2.0",
     "react-star-rating": "^1.4.2",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "0.71.4"
+    "semantic-ui-react": "^0.71.4"
   }
 }
