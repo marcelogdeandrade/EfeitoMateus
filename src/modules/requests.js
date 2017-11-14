@@ -1,7 +1,7 @@
 import { create } from 'apisauce'
 
 const api = create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://efeito-mateus.herokuapp.com/',
   headers: { 'Accept': 'application/vnd.github.v3+json' }
 })
 
