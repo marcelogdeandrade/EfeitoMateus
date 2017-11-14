@@ -70,7 +70,7 @@ class VideoPlayer extends Component {
   }
 
   renderRecommended(){
-    if (this.props.isIndependent && this.props.id == 0){
+    if (this.props.isIndependent || this.props.id != 0){
       return (
         <div></div>
       )
