@@ -62,17 +62,27 @@ class VideoPlayer extends Component {
   handleRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
 
   renderRating(){
-    if (this.props.isIndependent) {
-      return (
-        <div></div>
-      )
-    }
     return(
       <Header>
         Rating médio: {this.state.avg}
       </Header>
     )
   }
+
+  renderRecommended(){
+    if (this.props.isIndependent && this.props.id == 0){
+      return (
+        <div></div>
+      )
+    }
+    return (
+      <div>
+      <Icon name='star' size='huge' color='yellow' />
+      Recomendado
+      </div>
+    )
+  }
+
   renderEnd(){
     if (this.state.hasSubmitted){
       return (
@@ -99,6 +109,7 @@ class VideoPlayer extends Component {
       <div>
         <Segment textAlign='center'>
           <Header> Video {this.props.id}</Header>
+          {this.renderRecommended()}
           <ReactPlayer
             url={this.props.url}
             controls
